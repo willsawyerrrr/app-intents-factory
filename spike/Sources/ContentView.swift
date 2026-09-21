@@ -4,8 +4,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List {
-                Label("Fetch Page Title", systemImage: "safari")
-                Label("Create Text File", systemImage: "doc.text")
+                Label("Hello World", systemImage: "hand.wave")
             }
             .navigationTitle("Intents Spike")
         }

@@ -16,19 +16,14 @@ Team 8558CXPT9G (Personal Team). Simulator: `-destination 'generic/platform=iOS 
 
 ## Intents
 
-- `Fetch Page Title`: URLSession; URL in, page title out.
-- `Create Text File`: text and file name in, `.txt` `IntentFile` out.
-
-Not included: clipboard access. `UIPasteboard` reads from a background run are subject to the paste prompt, so a locked-device run cannot be relied on.
+- `Hello World`: name in, greeting out.
 
 ## On-device checklist
 
-- [ ] Both intents appear in Shortcuts under the app.
-- [ ] `Fetch Page Title` with `https://example.com`: dialog and result show `Example Domain`.
-- [ ] `Fetch Page Title` result feeds a following `Show Result` or `Set Variable` action.
-- [ ] `Create Text File` result feeds `Save File` or `Share`.
-- [ ] Phrases work in Siri: `Fetch a page title in Intents Spike`, `Create a text file in Intents Spike`.
-- [ ] Bind an intent to the Action Button.
+- [ ] `Hello World` appears in Shortcuts under the app.
+- [ ] Result feeds a following `Show Result` or `Set Variable` action.
+- [ ] Phrase works in Siri: `Say hello in Intents Spike`.
+- [ ] Bind the intent to the Action Button; runs while locked.
 
 ## How to add an intent
 
