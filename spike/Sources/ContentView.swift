@@ -41,7 +41,11 @@ struct ContentView: View {
             .refreshable { scripts = ScriptStore.names() }
         }
         .onAppear { scripts = ScriptStore.names() }
-        .onChange(of: scenePhase) { if scenePhase == .active { scripts = ScriptStore.names() } }
+        .onChange(of: scenePhase) {
+            guard scenePhase == .active else { return }
+            scripts = ScriptStore.names()
+            SpikeShortcuts.updateAppShortcutParameters()
+        }
     }
 
     private func run() {
