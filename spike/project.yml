@@ -14,15 +14,12 @@ targets:
     platform: iOS
     sources:
       - Sources
-      - path: Resources/Scripts
-        type: folder
     info:
       path: Info.plist
       properties:
         CFBundleDisplayName: Intents Spike
         UILaunchScreen: {}
-        UIFileSharingEnabled: true
-        LSSupportsOpeningDocumentsInPlace: true
+        NSRemindersFullAccessUsageDescription: Create reminders from Shortcuts and Siri.
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
     settings:

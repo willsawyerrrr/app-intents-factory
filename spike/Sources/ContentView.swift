@@ -1,66 +1,37 @@
+import EventKit
 import SwiftUI
 
 struct ContentView: View {
     @Environment(\.scenePhase) private var scenePhase
-    @State private var scripts: [String] = []
-    @State private var selected: String?
-    @State private var input = ""
-    @State private var output = ""
-    @State private var logs: [String] = []
-    @State private var running = false
+    @State private var remindersStatus = EKEventStore.authorizationStatus(for: .reminder)
 
     var body: some View {
         NavigationStack {
             List {
-                Section("Scripts") {
-                    ForEach(scripts, id: \.self) { name in
-                        Button {
-                            selected = name
-                        } label: {
-                            HStack {
-                                Text(name)
-                                Spacer()
-                                if selected == name { Image(systemName: "checkmark") }
+                Section("Intents") {
+                    Label("Create Reminder", systemImage: "checklist")
+                    Label("Fetch Page Title", systemImage: "safari")
+                    Label("Create Text File", systemImage: "doc.text")
+                }
+                Section("Permissions") {
+                    if remindersStatus == .fullAccess {
+                        Label("Reminders granted", systemImage: "checkmark")
+                    } else {
+                        Button("Grant Reminders Access") {
+                            Task {
+                                _ = try? await EKEventStore().requestFullAccessToReminders()
+                                remindersStatus = EKEventStore.authorizationStatus(for: .reminder)
                             }
                         }
                     }
                 }
-                Section("Run") {
-                    TextField("Input", text: $input)
-                    Button(running ? "Running…" : "Run") { run() }
-                        .disabled(selected == nil || running)
-                }
-                if !output.isEmpty {
-                    Section("Output") { Text(output).textSelection(.enabled) }
-                }
-                if !logs.isEmpty {
-                    Section("Console") { ForEach(logs.indices, id: \.self) { Text(logs[$0]).font(.footnote.monospaced()) } }
-                }
             }
             .navigationTitle("Intents Spike")
-            .refreshable { scripts = ScriptStore.names() }
         }
-        .onAppear { scripts = ScriptStore.names() }
         .onChange(of: scenePhase) {
             guard scenePhase == .active else { return }
-            scripts = ScriptStore.names()
+            remindersStatus = EKEventStore.authorizationStatus(for: .reminder)
             SpikeShortcuts.updateAppShortcutParameters()
-        }
-    }
-
-    private func run() {
-        guard let name = selected else { return }
-        running = true
-        Task {
-            defer { running = false }
-            do {
-                let result = try await ScriptRunner.run(name: name, input: input.isEmpty ? nil : input)
-                output = result.output
-                logs = result.logs
-            } catch {
-                output = "Error: \(error.localizedDescription)"
-                logs = []
-            }
         }
     }
 }
