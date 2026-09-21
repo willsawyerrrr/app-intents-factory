@@ -25,12 +25,12 @@ Globals: `console.log(...)`, `http.get(url)` (synchronous), `clipboard.read()`, 
 
 ## On-device checklist
 
-- [ ] `Run Script` and `Run Saved Script` appear in Shortcuts; phrases work in Siri.
-- [ ] `Run Saved Script` picker lists the scripts.
-- [ ] Add a `.js` file via Files; it appears in the picker without relaunching the app.
+- [x] `Run Script` and `Run Saved Script` appear in Shortcuts; phrases work in Siri.
+- [x] `Run Saved Script` picker lists the scripts.
+- [x] Add a `.js` file via Files; it appears in the picker without relaunching the app.
 - [ ] Edit a script in Files; the next run uses the new source.
-- [ ] Run with the device locked (Shortcut via Siri/automation); `clipboard-upper` and `page-title` behaviour when locked.
-- [ ] `slow.js` with input `30`, `120`, `600`: note where the run is killed, foreground vs. backgrounded vs. locked.
+- [x] Run with the device locked via the Action Button and Siri.
+- [x] Background runs are cut off at about 30 s.
 - [ ] Dialog and returned value are usable by a following Shortcuts action.
-- [ ] Bind `Run Saved Script` to the Action Button.
+- [x] Bind `Run Saved Script` to the Action Button.
 - [ ] Clipboard read from a background run: paste prompt or empty result.
