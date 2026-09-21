@@ -8,8 +8,8 @@ SwiftUI app exposing native Swift App Intents to Shortcuts, Siri and the Action 
 cd spike
 xcodegen generate
 xcodebuild -project AppIntentsSpike.xcodeproj -scheme AppIntentsSpike \
-  -destination 'id=00008150-00027DD02E20401C' -allowProvisioningUpdates build
-xcrun devicectl device install app --device 00008150-00027DD02E20401C <path to AppIntentsSpike.app>
+  -destination 'id=<device-udid>' -allowProvisioningUpdates build
+xcrun devicectl device install app --device <device-udid> <path to AppIntentsSpike.app>
 ```
 
 Team 8558CXPT9G (Personal Team). Simulator: `-destination 'generic/platform=iOS Simulator'`.
