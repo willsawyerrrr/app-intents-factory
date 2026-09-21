@@ -16,7 +16,6 @@ Team 8558CXPT9G (Personal Team). Simulator: `-destination 'generic/platform=iOS 
 
 ## Intents
 
-- `Create Reminder`: EventKit; title, optional due date, optional list (`ReminderListEntity`). Returns the title.
 - `Fetch Page Title`: URLSession; URL in, page title out.
 - `Create Text File`: text and file name in, `.txt` `IntentFile` out.
 
@@ -24,17 +23,11 @@ Not included: clipboard access. `UIPasteboard` reads from a background run are s
 
 ## On-device checklist
 
-- [ ] All three intents appear in Shortcuts under the app.
-- [ ] Open the app, tap `Grant Reminders Access`.
-- [ ] `Create Reminder`: list picker shows the Reminders lists.
-- [ ] `Create Reminder` with a due date: reminder appears with a due time and alert.
-- [ ] `Create Reminder` with no list: uses the default list.
-- [ ] `Create Reminder` from a background run (Siri, locked): works or fails with a readable error when access was not granted first.
+- [ ] Both intents appear in Shortcuts under the app.
 - [ ] `Fetch Page Title` with `https://example.com`: dialog and result show `Example Domain`.
 - [ ] `Fetch Page Title` result feeds a following `Show Result` or `Set Variable` action.
 - [ ] `Create Text File` result feeds `Save File` or `Share`.
-- [ ] Phrases work in Siri: `Add a reminder to <list> in Intents Spike`, `Fetch a page title in Intents Spike`, `Create a text file in Intents Spike`.
-- [ ] Newly created Reminders list appears in the phrase and picker after reopening the app.
+- [ ] Phrases work in Siri: `Fetch a page title in Intents Spike`, `Create a text file in Intents Spike`.
 - [ ] Bind an intent to the Action Button.
 
 ## How to add an intent

@@ -19,7 +19,6 @@ targets:
       properties:
         CFBundleDisplayName: Intents Spike
         UILaunchScreen: {}
-        NSRemindersFullAccessUsageDescription: Create reminders from Shortcuts and Siri.
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
     settings:
