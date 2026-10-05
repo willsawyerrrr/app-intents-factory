@@ -23,6 +23,6 @@ targets:
           - UIInterfaceOrientationPortrait
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: dev.willsawyerrrr.AppIntentsSpike
+        PRODUCT_BUNDLE_IDENTIFIER: dev.willsawyerrrr.app-intents-spike
         GENERATE_INFOPLIST_FILE: NO
         TARGETED_DEVICE_FAMILY: "1"
