@@ -187,7 +187,7 @@ Trade-off: every new behaviour needs a rebuild and install. The gain is full nat
 
 ## 8. On-device results
 
-Observed on an iPhone 17 running iOS 26, not from Apple docs:
+Observed on an iPhone 17 running iOS 26, not from Apple docs. `spike/` contains only `HelloWorldIntent`; the entity-query and Siri entity-phrase results come from code outside this repo:
 
 - Custom actions appear in Shortcuts, and their parameter pickers work.
 - Dynamic `EntityQuery` values refresh without a rebuild.
@@ -198,10 +198,10 @@ Observed on an iPhone 17 running iOS 26, not from Apple docs:
 
 ## 9. Minimal spike
 
-Build, in order, on a real device:
+`spike/` is the Xcode project: single app target, no extensions, no App Group, Personal Team signing. It ships `HelloWorldIntent` (`String` parameter, `ReturnsValue<String>`). Still to add and run on a real device:
 
-1. Xcode project, single app target, no extensions, no App Group. Install with a free team first to measure expiry cost.
-2. Two intents: one calling `URLSession` and returning `ReturnsValue<String>`; one taking an `AppEntity` parameter backed by an `EntityQuery`.
+1. An intent calling `URLSession` and returning `ReturnsValue<String>`.
+2. An intent taking an `AppEntity` parameter backed by an `EntityQuery`.
 3. Time the write, build and install loop per intent.
 4. Check each assumption below.
 
