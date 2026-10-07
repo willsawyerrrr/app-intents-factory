@@ -10,7 +10,7 @@ Conventions shared across willsawyerrrr.dev projects live in `../../CLAUDE.md`.
 
 ## Build
 
-See `spike/README.md`. CI builds the spike for the iOS Simulator.
+See `spike/README.md`. CI runs pre-commit and builds the spike for the iOS Simulator; the `CI Status` job aggregates every other CI job, and `main`'s ruleset requires only that check. Add any new CI job to its `needs:`.
 
 ## Docs
 
