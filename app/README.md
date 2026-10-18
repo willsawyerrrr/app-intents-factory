@@ -1,22 +1,22 @@
-# App Intents spike
+# App Intents Factory
 
 SwiftUI app exposing native Swift App Intents to Shortcuts, Siri and the Action Button.
 
 ## Build
 
 ```sh
-cd spike
+cd app
 xcodegen generate
-xcodebuild -project AppIntentsSpike.xcodeproj -scheme AppIntentsSpike \
+xcodebuild -project AppIntentsFactory.xcodeproj -scheme AppIntentsFactory \
   -destination 'id=<device-udid>' -allowProvisioningUpdates build
-xcrun devicectl device install app --device <device-udid> <path to AppIntentsSpike.app>
+xcrun devicectl device install app --device <device-udid> <path to AppIntentsFactory.app>
 ```
 
 Team 8558CXPT9G (Personal Team). Simulator: `-destination 'generic/platform=iOS Simulator'`.
 
 ## TestFlight
 
-Pushes to `main` that touch `spike/**` run `.github/workflows/deploy-ios.yml`, which archives and uploads to TestFlight via the platform repo's `ios-testflight.yml`. It needs:
+Pushes to `main` that touch `app/**` run `.github/workflows/deploy-ios.yml`, which archives and uploads to TestFlight via the platform repo's `ios-testflight.yml`. It needs:
 
 - Secrets `ASC_KEY_ID`, `ASC_ISSUER_ID`, `ASC_KEY_P8` (App Store Connect API key, Admin role).
 - Variable `DEVELOPMENT_TEAM`.
@@ -32,7 +32,7 @@ The build number is the workflow run number; the marketing version is `MARKETING
 
 - [ ] `Hello World` appears in Shortcuts under the app.
 - [ ] Result feeds a following `Show Result` or `Set Variable` action.
-- [ ] Phrase works in Siri: `Say hello in Intents Spike`.
+- [ ] Phrase works in Siri: `Say hello in App Intents Factory`.
 - [ ] Bind the intent to the Action Button; runs while locked.
 
 ## How to add an intent
