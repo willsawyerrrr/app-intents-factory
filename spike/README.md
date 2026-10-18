@@ -14,6 +14,16 @@ xcrun devicectl device install app --device <device-udid> <path to AppIntentsSpi
 
 Team 8558CXPT9G (Personal Team). Simulator: `-destination 'generic/platform=iOS Simulator'`.
 
+## TestFlight
+
+Pushes to `main` that touch `spike/**` run `.github/workflows/deploy-ios.yml`, which archives and uploads to TestFlight via the platform repo's `ios-testflight.yml`. It needs:
+
+- Secrets `ASC_KEY_ID`, `ASC_ISSUER_ID`, `ASC_KEY_P8` (App Store Connect API key, Admin role).
+- Variable `DEVELOPMENT_TEAM`.
+- An App Store Connect app record for `dev.willsawyerrrr.app-intents-spike`.
+
+The build number is the workflow run number; the marketing version is `MARKETING_VERSION` in `project.yml`.
+
 ## Intents
 
 - `Hello World`: name in, greeting out.

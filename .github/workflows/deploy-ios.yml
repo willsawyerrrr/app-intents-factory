@@ -1,0 +1,22 @@
+name: Deploy iOS
+
+on:
+  push:
+    branches: [main]
+    paths: ["spike/**", ".github/workflows/deploy-ios.yml"]
+  workflow_dispatch:
+
+concurrency: deploy-ios
+
+permissions:
+  contents: read
+
+jobs:
+  testflight:
+    uses: willsawyerrrr/platform/.github/workflows/ios-testflight.yml@main
+    with:
+      scheme: AppIntentsSpike
+      project-dir: spike
+      env: |
+        DEVELOPMENT_TEAM=${{ vars.DEVELOPMENT_TEAM }}
+    secrets: inherit
