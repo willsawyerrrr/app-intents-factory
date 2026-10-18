@@ -28,7 +28,7 @@ targets:
         ITSAppUsesNonExemptEncryption: false
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: dev.willsawyerrrr.app-intents-spike
+        PRODUCT_BUNDLE_IDENTIFIER: dev.willsawyerrrr.app-intents-factory
         GENERATE_INFOPLIST_FILE: NO
         TARGETED_DEVICE_FAMILY: "1"
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon

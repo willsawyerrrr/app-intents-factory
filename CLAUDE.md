@@ -6,7 +6,7 @@ Conventions shared across willsawyerrrr.dev projects live in `../../CLAUDE.md`.
 
 - Native Swift App Intents only. Each new behaviour is a Swift `AppIntent` in `spike/Sources/Intents/`, rebuilt with Xcode and installed on the device. No script runtimes or DSLs.
 - The Xcode project is generated from `spike/project.yml` with `xcodegen`; `*.xcodeproj` and `Info.plist` are not committed.
-- Bundle ID: `dev.willsawyerrrr.app-intents-spike`.
+- Bundle ID: `dev.willsawyerrrr.app-intents-factory`.
 
 ## Build
 
