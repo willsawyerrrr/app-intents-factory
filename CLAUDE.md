@@ -10,7 +10,7 @@ Conventions shared across willsawyerrrr.dev projects live in `../../CLAUDE.md`.
 
 ## Build
 
-See `app/README.md`. CI runs pre-commit and builds the app for the iOS Simulator; the `CI Status` job aggregates every other CI job, and `main`'s ruleset requires only that check. Add any new CI job to its `needs:`.
+See `app/README.md`. CI runs pre-commit and builds the app for the iOS Simulator; the `CI Status` job aggregates every other CI job, and `main`'s ruleset requires a pull request (squash merges only) and that check, and blocks force pushes and deletion. Add any new CI job to its `needs:`.
 
 ## Deploy
 
