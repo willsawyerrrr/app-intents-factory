@@ -6,7 +6,7 @@ struct ContentView: View {
             List {
                 Label("Hello World", systemImage: "hand.wave")
             }
-            .navigationTitle("Intents Spike")
+            .navigationTitle("App Intents Factory")
         }
     }
 }

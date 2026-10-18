@@ -1,4 +1,4 @@
-name: AppIntentsSpike
+name: AppIntentsFactory
 options:
   bundleIdPrefix: dev.willsawyerrrr
   deploymentTarget:
@@ -11,7 +11,7 @@ settings:
     DEVELOPMENT_TEAM: 8558CXPT9G
     CODE_SIGN_STYLE: Automatic
 targets:
-  AppIntentsSpike:
+  AppIntentsFactory:
     type: application
     platform: iOS
     sources:
@@ -19,7 +19,7 @@ targets:
     info:
       path: Info.plist
       properties:
-        CFBundleDisplayName: Intents Spike
+        CFBundleDisplayName: App Intents Factory
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         UILaunchScreen: {}

@@ -21,11 +21,11 @@ jobs:
       - uses: actions/checkout@v4
       - run: brew install xcodegen
       - run: xcodegen generate
-        working-directory: spike
+        working-directory: app
       - run: >
-          xcodebuild -project AppIntentsSpike.xcodeproj -scheme AppIntentsSpike
+          xcodebuild -project AppIntentsFactory.xcodeproj -scheme AppIntentsFactory
           -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build
-        working-directory: spike
+        working-directory: app
 
   ci-status:
     name: CI Status

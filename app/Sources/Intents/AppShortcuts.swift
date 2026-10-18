@@ -1,6 +1,6 @@
 import AppIntents
 
-struct SpikeShortcuts: AppShortcutsProvider {
+struct FactoryShortcuts: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
         AppShortcut(
             intent: HelloWorldIntent(),

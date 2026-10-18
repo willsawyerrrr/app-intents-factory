@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct SpikeApp: App {
+struct FactoryApp: App {
     var body: some Scene {
         WindowGroup { ContentView() }
     }
