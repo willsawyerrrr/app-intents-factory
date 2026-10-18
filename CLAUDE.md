@@ -12,6 +12,10 @@ Conventions shared across willsawyerrrr.dev projects live in `../../CLAUDE.md`.
 
 See `app/README.md`. CI runs pre-commit and builds the app for the iOS Simulator; the `CI Status` job aggregates every other CI job, and `main`'s ruleset requires only that check. Add any new CI job to its `needs:`.
 
+## Runtime parity
+
+The app builds with Xcode 26.6 in CI, local development and TestFlight deploys: `ci.yml` pins `macos-26` and `maxim-lobanov/setup-xcode` to `26.6`, and `.xcode-version` records it. Bump them together.
+
 ## Deploy
 
 Pushes to `main` touching `app/**` upload to TestFlight via `.github/workflows/deploy-ios.yml` (platform's `ios-testflight.yml`). Details in `app/README.md`. The workflow is not part of `CI Status`.
