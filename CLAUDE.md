@@ -16,6 +16,8 @@ See `app/README.md`. CI runs pre-commit and builds the app for the iOS Simulator
 
 The app builds with Xcode 26.6 in CI, local development and TestFlight deploys: `ci.yml` pins `macos-26` and `maxim-lobanov/setup-xcode` to `26.6`, and `.xcode-version` records it. Bump them together.
 
+CI runs pre-commit on Python 3.15, pinned by `.python-version` (the local toolchain).
+
 ## Deploy
 
 Pushes to `main` touching `app/**` upload to TestFlight via `.github/workflows/deploy-ios.yml` (platform's `ios-testflight.yml`). Details in `app/README.md`. The workflow is not part of `CI Status`.
