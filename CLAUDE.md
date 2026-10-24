@@ -20,7 +20,7 @@ CI runs pre-commit on Python 3.15, pinned by `.python-version` (the local toolch
 
 ## Deploy
 
-Pushes to `main` touching `app/**` upload to TestFlight via `.github/workflows/deploy-ios.yml` (platform's `ios-testflight.yml`). Credentials come from a 1Password Environment; details in `app/README.md`. The workflow is not part of `CI Status`.
+Pushes to `main` touching `app/**` upload to TestFlight via `.github/workflows/deploy-ios.yml` (platform's `ios-testflight.yml`). Credentials come from 1Password Environments (Apple Development plus the project's); details in `app/README.md`. The workflow is not part of `CI Status`.
 
 ## Docs
 
