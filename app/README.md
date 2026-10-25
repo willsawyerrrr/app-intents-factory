@@ -18,9 +18,12 @@ Team 8558CXPT9G (Personal Team). Simulator: `-destination 'generic/platform=iOS 
 
 Pushes to `main` that touch `app/**` run `.github/workflows/deploy-ios.yml`, which archives and uploads to TestFlight via the platform repo's `ios-testflight.yml`. It needs:
 
-- Secrets `ASC_KEY_ID`, `ASC_ISSUER_ID`, `ASC_KEY_P8` (App Store Connect API key, Admin role).
-- Variable `DEVELOPMENT_TEAM`.
+- The Apple Development 1Password Environment (`b5zkkwxuutlttwbrv5xhgojye4`), shared across apps, holding `DEVELOPMENT_TEAM`, `ASC_KEY_ID`, `ASC_ISSUER_ID` and `ASC_KEY_P8` (App Store Connect API key, Admin role). The App Intents Factory Environment (`d2ddxa6xgvqrxvux52jwkxgamy`) holds only project-specific variables.
+- A 1Password service account scoped to both Environments, stored as repository secret `OP_SERVICE_ACCOUNT_TOKEN`.
+- Repository variable `OP_ENVIRONMENT_IDS` = `b5zkkwxuutlttwbrv5xhgojye4 d2ddxa6xgvqrxvux52jwkxgamy` (shared first, project last).
 - An App Store Connect app record for `dev.willsawyerrrr.app-intents-factory`.
+
+Locally, run commands against the Environments with `op run --environment b5zkkwxuutlttwbrv5xhgojye4 --environment d2ddxa6xgvqrxvux52jwkxgamy -- <cmd>`.
 
 The build number is the workflow run number; the marketing version is `MARKETING_VERSION` in `project.yml`.
 

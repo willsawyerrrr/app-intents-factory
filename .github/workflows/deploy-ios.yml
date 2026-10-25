@@ -17,6 +17,4 @@ jobs:
     with:
       scheme: AppIntentsFactory
       project-dir: app
-      env: |
-        DEVELOPMENT_TEAM=${{ vars.DEVELOPMENT_TEAM }}
     secrets: inherit
