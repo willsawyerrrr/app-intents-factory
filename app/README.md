@@ -23,7 +23,7 @@ Pushes to `main` that touch `app/**` run `.github/workflows/deploy-ios.yml`, whi
 - Repository variable `OP_ENVIRONMENT_IDS` = `b5zkkwxuutlttwbrv5xhgojye4 d2ddxa6xgvqrxvux52jwkxgamy` (shared first, project last).
 - An App Store Connect app record for `dev.willsawyerrrr.app-intents-factory`.
 
-Locally, run commands with the mounted Environment files loaded: `(set -a; . "$HOME/willsawyerrrr.dev/.env.apple"; . "$HOME/willsawyerrrr.dev/app-intents-factory/.env"; set +a; <cmd>)`.
+Locally, run commands with the mounted Environment files loaded: `~/willsawyerrrr.dev/platform/main/scripts/load-env ~/willsawyerrrr.dev/.env.apple ~/willsawyerrrr.dev/app-intents-factory/.env -- <cmd>`.
 
 The build number is the workflow run number; the marketing version is `MARKETING_VERSION` in `project.yml`.
 
