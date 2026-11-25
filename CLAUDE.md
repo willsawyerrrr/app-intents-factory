@@ -14,7 +14,7 @@ See `app/README.md`. CI runs pre-commit and builds the app for the iOS Simulator
 
 ## Runtime parity
 
-The app builds with Xcode 26.6 in CI, local development and TestFlight deploys: `ci.yml` pins `macos-26` and `maxim-lobanov/setup-xcode` to `26.6`, and `.xcode-version` records it. Bump them together.
+The app builds with Xcode 27.2 in CI, local development and TestFlight deploys: `ci.yml` pins the `xcode-27` runner and `maxim-lobanov/setup-xcode` to `27.2`, and `.xcode-version` records it. Bump them together.
 
 CI runs pre-commit on Python 3.15, pinned by `.python-version` (the local toolchain).
 
