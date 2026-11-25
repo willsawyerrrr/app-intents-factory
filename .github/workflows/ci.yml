@@ -19,6 +19,7 @@ jobs:
     runs-on: macos-26
     steps:
       - uses: actions/checkout@v4
+      - uses: willsawyerrrr/platform/.github/actions/xcode-cache@main
       - uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: "26.6"
