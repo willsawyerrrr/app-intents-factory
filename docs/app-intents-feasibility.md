@@ -198,7 +198,7 @@ Observed on an iPhone 17 running iOS 26, not from Apple docs. `app/` contains on
 
 ## 9. Current state and roadmap
 
-`app/` is the Xcode project: single app target, no extensions, no App Group, Personal Team signing. It ships `HelloWorldIntent` (`String` parameter, `ReturnsValue<String>`). Roadmap, each verified on a real device:
+`app/` is the Xcode project: iOS 27.0 minimum, single app target, no extensions, no App Group, Personal Team signing. It ships `HelloWorldIntent` (`String` parameter, `ReturnsValue<String>`). Roadmap, each verified on a real device:
 
 1. An intent calling `URLSession` and returning `ReturnsValue<String>`.
 2. An intent taking an `AppEntity` parameter backed by an `EntityQuery`.
